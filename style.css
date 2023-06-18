@@ -1,0 +1,161 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg-color: #ffffff;
+
+  --base-color: 194;
+  --primary-text-card-color: 0;
+  --text-color-card: hsla(var(--primary-text-card-color), 0%, 100%, 1);
+  --bg-color-card: hsla(var(--base-color), 97%, 31%, 1);
+
+  --text-color: #323238;
+
+  font-size: 62.5%;
+}
+
+main{
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5rem;
+}
+
+#timer{
+  font-size: clamp(6rem, 8rem + 10vw, 12.6rem);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-color);
+
+  display: flex;
+
+  padding-bottom: 2rem;
+}
+
+#controls button svg{
+  width: clamp(3.5rem, 3.5rem + 10vw, 4.8rem);
+  height: clamp(3.3rem 3rem + 10vh, 4.8rem);
+}
+
+#controls{
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+
+  justify-content: center;
+
+  gap: 3rem;
+}
+
+#controls button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: all 200ms;
+}
+
+#controls button:hover{
+  transform: scale(1.1);
+
+  opacity: 0.8;
+}
+
+.hide{
+  display: none;
+}
+
+.forest-sound-on svg path,
+.rain-sound-on svg path,
+.coffeeShop-sound-on svg path,
+.fireplace-sound-on svg path{
+  fill: var(--text-color-card);
+}
+
+#cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "A B"
+  "C D";
+  gap: 2.2rem;
+
+}
+
+#cards button{
+  width: clamp(8rem, 10rem + 10vw, 13.8rem);
+  height: clamp(9rem, 9rem + 10vh, 15.2rem);
+  border: none;
+  border-radius: 2.4rem;
+  
+  transition: all 200ms;
+
+  cursor: pointer;
+}
+
+#cards button:hover{
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+#cards button:nth-child(1){
+  grid-area: A;
+}
+
+#cards button:nth-child(2){
+  grid-area: B;
+}
+
+#cards button:nth-child(3){
+  grid-area: C;
+}
+
+#cards button:nth-child(4){
+  grid-area: D;
+}
+
+#cards button:nth-child(5){
+  background-color: var(--bg-color-card);
+  grid-area: A;
+}
+
+#cards button:nth-child(6){
+  background-color: var(--bg-color-card);
+  grid-area: B;
+}
+
+#cards button:nth-child(7){
+  background-color: var(--bg-color-card);
+  grid-area: C;
+}
+
+#cards button:nth-child(8){
+  background-color: var(--bg-color-card);
+  grid-area: D;
+}
+
+@media (min-width: 750px) {
+  main{
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  margin: 0;
+  }
+
+  #controls{
+    gap: 4rem;
+  }
+
+  #cards{
+    gap: 3.2rem
+  }
+}
